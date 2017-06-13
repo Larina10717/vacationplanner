@@ -1,0 +1,29 @@
+.jumbotron
+  .container
+    %h2 Dashboard
+.container
+  .row
+    .col-md-4
+      %h3 Request new vacation
+      %br/
+      .btn.btn-lg.btn-primary
+        %p
+          = link_to 'Request', new_vacation_path, 'data-no-turbolink' => true
+    .col-md-8
+      %h3 Your pending vacations
+      - unless pending_vacations.blank?
+        = render 'vacations/pending_vacations'
+      - else
+        %em There are no pending vacations at the moment
+  %hr
+  .row
+    .col-md-4
+      %h4 Available days
+      %br/
+      %h1.text-left 24
+    .col-md-8
+      %h3 Your approved vacations
+      - unless approved_vacations.blank?
+        = render 'vacations/approved_vacations'
+      - else
+        %em There are no approved vacations at the moment

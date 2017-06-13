@@ -1,0 +1,23 @@
+.table-responsive
+  %table.table
+    %thead
+      %tr
+        %th
+          Start Date
+        %th
+          End Date
+        %th
+          Pending
+        %th
+          Created at
+    %tbody
+      - approved_vacations.each do |vacation|
+        %tr
+          %td
+            = vacation.start_date
+          %td
+            = vacation.end_date
+          %td
+            = vacation.pending
+          %td
+            = vacation.created_at

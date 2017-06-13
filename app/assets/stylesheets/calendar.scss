@@ -1,0 +1,25 @@
+#vacation_form.jumbotron {
+  padding-bottom: 20%;
+}
+#ui-datepicker-div, .ui-datepicker-widget {
+  background-color: #8b8878;
+  padding-left:4px;
+  padding-right:4px;
+  border-radius: 2px;
+}
+#ui-datepicker-div a, .ui-datepicker-widget a {
+  color: whitesmoke;
+}
+span.ui-icon.ui-icon-circle-triangle-e {
+
+  margin-left: -15px;
+}
+.form-control {
+  padding: 6px 55px 6px 10px;
+}
+.ui-state-disabled {
+  color: darkgrey;
+}
+.datepicker{
+ z-index:1151 !important;
+}

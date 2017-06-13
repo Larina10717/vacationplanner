@@ -1,0 +1,19 @@
+.table-responsive
+  %table.table
+    %thead
+      %tr
+        %th
+          Start Date
+        %th
+          End Date
+        %th
+          Created at
+    %tbody
+      - pending_vacations.each do |vacation|
+        %tr
+          %td
+            = beautify(vacation&.start_date)
+          %td
+            = beautify(vacation&.end_date)
+          %td
+            = beautify(vacation&.created_at)

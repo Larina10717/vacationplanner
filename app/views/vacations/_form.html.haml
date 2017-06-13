@@ -1,0 +1,15 @@
+- if @vacation.errors.any?
+  = @vacation.errors.full_messages
+.container
+  %h3 Request a new vacation
+  #vacation_form.jumbotron
+    .row
+      .col-sm-12.col-md-12
+        = bootstrap_form_for @vacation, html: { class: 'form-horizontal form-inline' } do |f|
+          .row
+            .form-group.col-md-4
+              = f.text_field :start_date, hide_label: true, placeholder: 'From', class:  'datepicker'
+            .form-group.col-md-4
+              = f.text_field :end_date, hide_label: true, placeholder: 'To', class: 'datepicker'
+            .col-md-4
+              = f.submit class: 'btn btn-primary btn-large'

@@ -1,0 +1,14 @@
+- if @employee.errors.any?
+  #error_explanation.alert.alert-danger
+    = devise_error_messages!
+    = notice
+.jumbotron
+  = form_for @employee, :html => {:class => "form-horizontal"} do |f|
+    .form-group
+      = f.label :name
+      = f.text_field :name
+    .form-group
+      = f.label :email
+      = f.text_field :email
+    .form-group
+      = f.submit class: 'btn btn-primary'
