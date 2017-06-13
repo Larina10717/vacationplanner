@@ -20,4 +20,9 @@ RSpec.describe Vacation, type: :model do
       expect(@vacation.errors.messages).not_to be_empty
     end
   end
+
+  context 'when an already requested day is taken' do
+    before do
+      @vacation.start_date = Date.new(2017,6,20)
+      @vacation.end_date = Date.new(2017,6,24)
 end

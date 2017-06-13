@@ -20,10 +20,11 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  model:
-    vacation:      
-      errors:
-        messages:
-          start_date:
-            start_greater_than_end: "Start date is greater than end date"
-            start_date_overlap: "Start or end date overlaps another vacation"
+  activerecord:
+    errors:
+      models:
+        vacation:      
+          attributes: 
+              start_date:
+                start_greater: 'Start date is greater than end date'
+                already_taken: 'One or more days were already requested'
