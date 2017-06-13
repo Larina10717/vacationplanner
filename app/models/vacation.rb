@@ -5,7 +5,7 @@ class Vacation < ApplicationRecord
 
   validate :start_date
   validate :end_date
-  #validate :start_date_greater?
+  validate :start_date_greater?
   #validate :dates_overlap?
 
   private

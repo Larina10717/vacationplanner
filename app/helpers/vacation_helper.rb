@@ -15,10 +15,4 @@ module VacationHelper
   def beautify(time)
       time.strftime("%d %B %Y")
   end
-
-  def requested_vacation_days
-    if @vacation.pending?
-      @vacation.end_date - @vacation.start_date
-    end
-  end
 end
