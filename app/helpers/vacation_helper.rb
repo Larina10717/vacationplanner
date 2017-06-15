@@ -1,5 +1,7 @@
 module VacationHelper
 
+  attr_accessor :employee
+
   def vacation_days
     @vacation.end_date - @vacation.start_date
   end
@@ -15,4 +17,10 @@ module VacationHelper
   def beautify(time)
       time.strftime("%d %B %Y")
   end
+
+
+  def employee_vacations
+    employee_vacations = Vacation.all.to_a
+  end    
+  
 end
