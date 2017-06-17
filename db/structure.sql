@@ -2,11 +2,12 @@
 -- PostgreSQL database dump
 --
 
--- Dumped from database version 9.5.6
--- Dumped by pg_dump version 9.5.6
+-- Dumped from database version 9.6.3
+-- Dumped by pg_dump version 9.6.3
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
+SET idle_in_transaction_session_timeout = 0;
 SET client_encoding = 'UTF8';
 SET standard_conforming_strings = on;
 SET check_function_bodies = false;
@@ -136,21 +137,21 @@ ALTER SEQUENCE vacations_id_seq OWNED BY vacations.id;
 
 
 --
--- Name: id; Type: DEFAULT; Schema: public; Owner: -
+-- Name: employees id; Type: DEFAULT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY employees ALTER COLUMN id SET DEFAULT nextval('employees_id_seq'::regclass);
 
 
 --
--- Name: id; Type: DEFAULT; Schema: public; Owner: -
+-- Name: vacations id; Type: DEFAULT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY vacations ALTER COLUMN id SET DEFAULT nextval('vacations_id_seq'::regclass);
 
 
 --
--- Name: ar_internal_metadata_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: ar_internal_metadata ar_internal_metadata_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY ar_internal_metadata
@@ -158,7 +159,7 @@ ALTER TABLE ONLY ar_internal_metadata
 
 
 --
--- Name: employees_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: employees employees_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY employees
@@ -166,7 +167,7 @@ ALTER TABLE ONLY employees
 
 
 --
--- Name: schema_migrations_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: schema_migrations schema_migrations_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY schema_migrations
@@ -174,7 +175,7 @@ ALTER TABLE ONLY schema_migrations
 
 
 --
--- Name: vacations_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: vacations vacations_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY vacations
@@ -203,7 +204,7 @@ CREATE INDEX index_vacations_on_employee_id ON vacations USING btree (employee_i
 
 
 --
--- Name: fk_rails_731ddac4b5; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: vacations fk_rails_731ddac4b5; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY vacations
@@ -228,7 +229,6 @@ INSERT INTO "schema_migrations" (version) VALUES
 ('20170611073413'),
 ('20170611081149'),
 ('20170611201814'),
-('20170613145026'),
 ('20170613151423'),
 ('20170613153331');
 
