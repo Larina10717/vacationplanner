@@ -21,6 +21,7 @@ RSpec.describe Vacation, type: :model do
       @vacation = Vacation.new(employee_id: employee.id,
                                 start_date: Date.new(2017,8,14),
                                 end_date: Date.new(2017,8,20))
+    allow(@vacation).to receive(:overlap_check?) { true }
     end
  
     it 'is not valid' do

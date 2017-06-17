@@ -24,7 +24,7 @@ en:
     errors:
       models:
         vacation:      
+          already_taken: 'One or more days were already requested'
           attributes: 
               start_date:
                 start_greater: 'Start date is greater than end date'
-                already_taken: 'One or more days were already requested'
