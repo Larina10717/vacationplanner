@@ -3,22 +3,30 @@ class Vacation < ApplicationRecord
 
   belongs_to :employee
 
-  validate :start_date
-  validate :end_date
-  #validate :start_date_greater?
-  #validate :dates_overlap?
+  validate :start_date_greater?
+  validate :days_overlap?
 
   private
 
-  #def dates_overlap?
-  #  if Vacation.where(start_date: self.start_date).blank?
-  #    errors.messages[:start_date] << :start_date_overlap
-  #  end
-  #end
-
-  def start_date_greater?
-    if :start_date > :end_date
-      errors.messages[:start_date] << :start_greater_than_end
+    def start_date_greater?
+      if self.start_date > self.end_date
+        self.errors.add(:start_date, :start_greater)
+      end
     end
-  end
-end
+
+    def days_overlap?
+      if overlap_check?
+        errors.add(:start_date, "Eccheccazzo")
+      end
+    end
+
+    def overlap_check?
+      unless employee_vacations.blank?
+        dates_range = (self.start_date..self.end_date)
+        employee_vacations.each do |vacation|
+          dates_range.include?(vacation.start_date..vacation.end_date)
+        end
+      end
+    end
+
+ end

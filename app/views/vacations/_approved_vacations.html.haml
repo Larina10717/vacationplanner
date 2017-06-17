@@ -14,10 +14,8 @@
       - approved_vacations.each do |vacation|
         %tr
           %td
-            = vacation.start_date
+            = beautify(vacation.start_date)
           %td
-            = vacation.end_date
+            = beautify(vacation.end_date)
           %td
-            = vacation.pending
-          %td
-            = vacation.created_at
+            = beautify(vacation.created_at)

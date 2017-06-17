@@ -21,7 +21,7 @@ class VacationsController < ApplicationController
         flash[:notice] = 'Vacation request was successfully created'
         redirect_to root_path
       else
-        flash[:error] = 'Could not be saved'
+        flash[:notice] = 'Could not be saved'
         render :new
       end
   end

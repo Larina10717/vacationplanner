@@ -1,5 +1,7 @@
 module VacationHelper
 
+  attr_accessor :employee
+
   def vacation_days
     @vacation.end_date - @vacation.start_date
   end
@@ -16,9 +18,9 @@ module VacationHelper
       time.strftime("%d %B %Y")
   end
 
-  def requested_vacation_days
-    if @vacation.pending?
-      @vacation.end_date - @vacation.start_date
-    end
-  end
+
+  def employee_vacations
+    employee_vacations = Vacation.all.to_a
+  end    
+  
 end

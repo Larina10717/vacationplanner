@@ -64,7 +64,7 @@ CREATE TABLE employees (
     created_at timestamp without time zone NOT NULL,
     updated_at timestamp without time zone NOT NULL,
     supervisor boolean DEFAULT false,
-    available_vacation_days integer,
+    available_vacation_days integer DEFAULT 24,
     taken_vacation_days integer,
     name character varying
 );
@@ -111,7 +111,8 @@ CREATE TABLE vacations (
     declined boolean,
     employee_id integer,
     start_date date,
-    end_date date
+    end_date date,
+    approved_at date
 );
 
 
@@ -226,6 +227,9 @@ INSERT INTO "schema_migrations" (version) VALUES
 ('20170611072302'),
 ('20170611073413'),
 ('20170611081149'),
-('20170611201814');
+('20170611201814'),
+('20170613145026'),
+('20170613151423'),
+('20170613153331');
 
 
