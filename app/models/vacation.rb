@@ -16,7 +16,7 @@ class Vacation < ApplicationRecord
 
     def days_overlap?
       if overlap_check?
-        errors.add(:start_date, "Eccheccazzo")
+        errors.add(:start_date, :already_taken)
       end
     end
 
@@ -29,4 +29,8 @@ class Vacation < ApplicationRecord
       end
     end
 
+  def employee_vacations
+    employee_vacations = Vacation.where(employee_id: @vacation.employee_id).to_a
+  end    
+    
  end
